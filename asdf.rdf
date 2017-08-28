@@ -1,0 +1,10 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+    xmlns:rev="http://purl.org/stuff/rev#"
+    xmlns:Schema.org="http://schema.org/"
+    xmlns:endpoint="http://localhost">
+  <Schema.org:Place rdf:about="http://somewhere/JohnSmith/5c42ce44-4ed7-4b8d-9260-05f88d25f54d">
+    <rev:comment>teste testes testes</rev:comment>
+  </Schema.org:Place>
+</rdf:RDF>
