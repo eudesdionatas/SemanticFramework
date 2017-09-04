@@ -1,3 +1,5 @@
+package tests;
+
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.VCARD;
 
@@ -6,13 +8,14 @@ import java.io.OutputStream;
 import java.util.Properties;
 import java.util.Set;
 import java.util.UUID;
+import semanticframework.*;
 
 import static org.apache.jena.enhanced.BuiltinPersonalities.model;
 
 /**
  * Created by Eudes on 22/08/2017.
  */
-public class salvarPrimeiroRDF {
+public class TesteSalvarPrimeiroRDF {
 
     // some definitions
     static String personURI = "http://somewhere/JohnSmith/";
@@ -67,7 +70,7 @@ public class salvarPrimeiroRDF {
 
     private static Model createModel() {
 
-        Config config = new Config();
+        ConfigURIs config = new ConfigURIs();
         Properties properties = config.loadProperties();
         Set<String> propriedades = properties.stringPropertyNames();
         Model model = ModelFactory.createDefaultModel();
@@ -84,7 +87,7 @@ public class salvarPrimeiroRDF {
        // String comment = !(comment == null) ? this.comment : "";
 
 
-        Config config = new Config();
+        ConfigURIs config = new ConfigURIs();
         Properties properties = config.loadProperties();
         Set<String> propriedades = properties.stringPropertyNames();
 

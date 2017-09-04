@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configurations>
+    <endpointURI>http://localhost</endpointURI>
+
+    <vocabularies>
+        <vocabularie prefix="geo">http://www.w3.org/2003/01/geo/wgs84_pos#</vocabularie>
+        <vocabularie prefix="rev">http://www.w3.org/2003/01/geo/wgs84_pos#</vocabularie>
+        <vocabularie prefix="Schema.org">http://schema.org/</vocabularie>
+    </vocabularies>
+
+</configurations>

@@ -1,4 +1,4 @@
-/**
+package semanticframework; /**
  * Created by Eudes on 21/08/2017.
  */
 
@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class Config {
+public class ConfigURIs {
 
     //Variável para armazenar a URI do endpoint
     private String endPointURI;
@@ -20,18 +20,6 @@ public class Config {
 
     //Arquivo configurado com o caminho da pasta do usuário para gravar e ler as propriedades
     File file = new File(System.getProperty("user.home"), "config.properties");
-
-    public static void main(String[] args) {
-
-        Config config = new Config();
-
-        config.setEndpointURI("http://localhost");
-        config.setVocabURI("geo", "http://www.w3.org/2003/01/geo/wgs84_pos#");
-        config.setVocabURI("rev", "http://purl.org/stuff/rev#");
-        config.setVocabURI("Schema.org", "http://schema.org/");
-        //config.saveProperties();
-        config.loadProperties();
-    }
 
     /*
     Método para atribuir o valor da URI do endpoint
@@ -55,7 +43,7 @@ public class Config {
     Método para salvar todas as propriedades no arquivo "config.properties"
     Este método salva na pasta do usuário
      */
-    public void saveProperties() {
+    /*public void saveProperties() {
         try {
             //Salva o arquivo na variável externa file que tem o caminho da pasta do usuário
             FileOutputStream fileOut = new FileOutputStream(file);
@@ -66,6 +54,10 @@ public class Config {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }*/
+
+    public void saveProperties(){
+        LoadWriteXMLFile writeXML = new LoadWriteXMLFile();
     }
 
     public Properties loadProperties(){

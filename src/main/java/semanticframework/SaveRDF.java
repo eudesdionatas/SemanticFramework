@@ -1,3 +1,5 @@
+package semanticframework;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,17 +8,16 @@ import java.util.Properties;
 import org.apache.jena.query.DatasetAccessor;
 import org.apache.jena.query.DatasetAccessorFactory;
 import org.apache.jena.rdf.model.*;
-import org.apache.jena.vocabulary.VCARD;
 
 
 /**
  * Created by Eudes on 21/08/2017.
  */
 
-public class saveRDF {
+public class SaveRDF {
 
     //Variável para manter as configurações de funcionamento do framework
-    Config config = null;
+    ConfigURIs config = null;
 
     //Arquivo para armazenar as propriedades de configuração de funcionamento do framework
     Properties properties = null;
@@ -32,7 +33,7 @@ public class saveRDF {
 
     //Método para configurar as propriedades dadas pelo usuário
     public void setConfig(){
-        config = new Config();
+        config = new ConfigURIs();
         properties = config.loadProperties();
     }
 
