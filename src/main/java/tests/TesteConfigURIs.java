@@ -27,6 +27,6 @@ public class TesteConfigURIs {
 //        config.setProperty("name", "Schema.org");
         //config.saveConfig();
         Model model = config.createModelByPreviousConfig();
-        model.createResource()
+        model.createResource();
     }
 }
