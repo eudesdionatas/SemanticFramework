@@ -1,6 +1,8 @@
-package semanticframework; /**
+package garbage; /**
  * Created by Eudes on 21/08/2017.
  */
+
+import semanticframework.WriteXMLFile;
 
 import java.io.*;
 import java.util.*;
@@ -57,7 +59,7 @@ public class ConfigURIs {
     }*/
 
     public void saveProperties(){
-        LoadWriteXMLFile writeXML = new LoadWriteXMLFile();
+        WriteXMLFile writeXML = new WriteXMLFile();
     }
 
     public Properties loadProperties(){

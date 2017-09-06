@@ -1,16 +1,12 @@
-package tests;
+package garbage;
 
 import org.apache.jena.rdf.model.*;
-import org.apache.jena.vocabulary.VCARD;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.util.Set;
 import java.util.UUID;
-import semanticframework.*;
-
-import static org.apache.jena.enhanced.BuiltinPersonalities.model;
 
 /**
  * Created by Eudes on 22/08/2017.

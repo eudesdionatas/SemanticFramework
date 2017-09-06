@@ -15,6 +15,13 @@
             <version>3.2.0</version>
             <type>pom</type>
         </dependency>
+
+        <dependency>
+            <groupId>oauth.signpost</groupId>
+            <artifactId>signpost-commonshttp4</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>

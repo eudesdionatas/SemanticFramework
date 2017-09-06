@@ -1,10 +1,11 @@
 package semanticframework;
 
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,16 +15,15 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.w3c.dom.*;
-
-public class LoadWriteXMLFile {
+public class WriteXMLFile {
 
     /////////////////////////////////////////////////////////////////////////////
     //Método para escrever um arquivo XML de acordo com as configurações passadas
-    public void write(HashMap<String, String> configuration) {
+    public void writeXML(HashMap<String, String> configuration) {
         try {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -129,67 +129,6 @@ public class LoadWriteXMLFile {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////
-    //Método para fazer a uma lista de entradas <chave, valor> de configurações
-    public HashMap<String, String> getConfigurationByXML(File file) {
-
-        // Hashmap com as configurações de URIs
-        HashMap<String, String> configuration = new HashMap<String, String>();
-
-        try {
-            File fXmlFile = new File(file.getPath());
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
-            //optional, but recommended
-            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-            doc.getDocumentElement().normalize();
-            //System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
-
-            Element eElement = null;
-
-            NodeList endpoitnList = doc.getElementsByTagName("endpoint");
-            Node endpoint = endpoitnList.item(0);
-            eElement = (Element) endpoint;
-            configuration.put("endpoint", endpoint.getTextContent());
-            //Pega os elemtentos vocabulry
-            NodeList nList = doc.getElementsByTagName("vocabulary");
-            //System.out.println("----------------------------");
-
-            //Para cada elemento vocabulary
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                Node nNode = nList.item(temp);
-                //System.out.println("\nCurrent Element: " + nNode.getNodeName() + ": " + nNode.getTextContent());
-                //Verifica se o elemento é do tipo nó
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    eElement = (Element) nNode;
-                    //Pegue o id do vocabulário
-                    //System.out.print("Element id : " + eElement.getAttribute("id"));
-                    configuration.put(eElement.getAttribute("id"), eElement.getTextContent());
-                }
-                //Pega a lista de filhos do vocabulário, no caso, propriedades e põe em properties
-                NodeList properties = nNode.getChildNodes();
-                //System.out.print(": " + properties.getLength() + " childs");
-                //Para cada propriedade filha do vocabulário
-                for (int x = 0; x < properties.getLength(); x++) {
-                    //Pegue um item da lista de nós filho e ponha em propertie
-                    Node propertie = properties.item(x);
-                    //System.out.print("\nCurrent Element :" + propertie.getNodeName() + " ");
-                    //Verifica se o elemento é do tipo nó
-                    if (propertie.getNodeType() == Node.ELEMENT_NODE) {
-                        Element el = (Element) propertie;
-                        //Pegue o valor da propriedade
-                        //System.out.println("\n\tPropertie: " + el.getTextContent());
-                        configuration.put(el.getTextContent(), eElement.getAttribute("id"));
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-        return configuration;
-    }
 
  //    private Model createModel() {
 //        Model model = ModelFactory.createDefaultModel();

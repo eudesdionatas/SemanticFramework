@@ -2,7 +2,9 @@ package tests;
 
 
 import org.apache.jena.rdf.model.Model;
-import semanticframework.*;
+import org.apache.jena.rdf.model.Resource;
+import semanticframework.ConfigURIsXML;
+import semanticframework.SaveRDF;
 
 /**
  * Created by Eudes on 02/09/2017.
@@ -27,6 +29,7 @@ public class TesteConfigURIs {
 //        config.setProperty("name", "Schema.org");
         //config.saveConfig();
         Model model = config.createModelByPreviousConfig();
-        model.createResource();
+        Resource resource = config.addResourceTo(model);
+        SaveRDF.saveModel(model);
     }
 }
