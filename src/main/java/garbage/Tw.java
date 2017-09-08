@@ -1,4 +1,4 @@
-package twitter;
+package garbage;
 
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;

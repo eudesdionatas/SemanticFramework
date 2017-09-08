@@ -1,4 +1,4 @@
-package twitter;
+package garbage;
 
 import twitter4j.Status;
 import twitter4j.Twitter;

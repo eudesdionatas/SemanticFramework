@@ -17,8 +17,8 @@ public class TwitterInfo {
     public static void main (String[] args){
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
         configurationBuilder.setDebugEnabled(true)
-                .setOAuthConsumerKey("emP68ia4jF21YSqqfDVPQGHMa")
-                .setOAuthConsumerSecret("zoAUN47MHtHkjhFkiuNA8vJ2Qmz9ISOGQUE485ldPd2gWLVFaA")
+                .setOAuthConsumerKey("j4pTXd5p0jKJcqmXtDGdtxLvf")
+                .setOAuthConsumerSecret("BDzgi4RENA9FwZzYeAAz2p3NBokTLMxM7v5WmYIkqr0NdAmaan")
                 .setOAuthAccessToken("74136375-5hPoXiqMwpqwDFAVigmj2zmb0bKiOvutq3wLnXzM6")
                 .setOAuthAccessTokenSecret("BdTvlt50mheJZyHPN7LRrDrK3gM2Y4adlhNa1QBBrutXF");
 
