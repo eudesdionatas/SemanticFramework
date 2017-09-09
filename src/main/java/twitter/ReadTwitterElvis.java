@@ -25,7 +25,6 @@ public class ReadTwitterElvis {
             twitter.setOAuthConsumer(consumerKey, consumerSecret);
             twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
 
-
             User user = twitter.verifyCredentials();
 
             List<Status> statuses = twitter.getHomeTimeline();
